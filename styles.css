@@ -1,0 +1,93 @@
+﻿/* Явне керування блоковою моделлю (box-sizing, margin, padding) */
+*, *::before, *::after {
+    box-sizing: border-box; /* Розміри блоку включають padding та border */
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Селектор тегу */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* 2. Селектор ID */
+#main-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* 3. Селектор класу */
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #c4b5fd;
+}
+
+/* Макет сторінки на CSS Grid */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Дві колонки однакової ширини */
+    gap: 25px; /* Відстань між колонками */
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Оформлення секцій (керування border та padding) */
+.section-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+    .section-card h2 {
+        color: #0f172a;
+        border-bottom: 2px solid #6366f1;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+.education-list {
+    list-style-type: none; /* Прибираємо стандартні маркери списку */
+}
+
+/* Псевдоклас 1: :first-child (робить секцію "Про мене" на всю ширину екрана) */
+.layout-grid section:first-child {
+    grid-column: 1 / -1; /* Розтягнути від першої до останньої лінії сітки */
+}
+
+/* 4. Селектор атрибута */
+a[href^="mailto"],
+a[href^="https"] {
+    color: #e0e7ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+    /* Псевдоклас 2: :hover (зміна кольору при наведенні мишки) */
+    a[href^="mailto"]:hover,
+    a[href^="https"]:hover {
+        color: #fde047;
+        text-decoration: underline;
+    }
+
+/* Медіазапит для зміни макету на вузькому екрані (мобільні телефони) */
+@media (max-width: 768px) {
+    .layout-grid {
+        grid-template-columns: 1fr; /* Змінюємо макет на 1 колонку замість 2 */
+        margin: 20px auto;
+    }
+
+    #main-header {
+        padding: 30px 15px !important; /* Трохи зменшуємо відступи на телефонах */
+    }
+}

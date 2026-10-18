@@ -3,36 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Резюме - Женчак Марта</title>
+
+    <!-- 1. Зовнішній спосіб підключення стилів -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- 2. Внутрішній спосіб підключення стилів (Internal CSS) -->
+    <style>
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e293b;
+            color: #94a3b8;
+            margin-top: 40px;
+            border-top: 4px solid #334155;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Шапка з основною інформацією -->
-    <header>
+    <!-- 3. Вбудований спосіб підключення стилів (Inline CSS) -->
+    <header id="main-header" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 40px 20px; text-align: center;">
         <h1>Женчак Марта</h1>
-        <p>Студентка</p>
-        <p>Зв'язатися зі мною: <a href="mailto:zencakmarta@gmail.com">zencakmarta@gmail.com</a></p>
-        <p>Мій GitHub: <a href="https://github.com/zencakmarta-hash">github.com/zencakmarta-hash</a></p>
+        <p class="subtitle">Студентка</p>
+        <p>Зв'язатися зі мною: <a href="mailto:zencakmarta@gmail.com" class="contact-link">zencakmarta@gmail.com</a></p>
+        <p>Мій GitHub: <a href="https://github.com/zencakmarta-hash" target="_blank" class="contact-link">github.com/zencakmarta-hash</a></p>
     </header>
 
-    <!-- Основний контент сторінки -->
-    <main>
+    <!-- Основний контент із класом для Grid-макету -->
+    <main class="layout-grid">
 
-        <!-- Розділ "Про себе" -->
-        <section>
+        <section id="about" class="section-card">
             <h2>Про мене</h2>
-            <p>Професійний вайбкодер, вмію ліпити смачні сирники. Після закінчення школи мала мету зв'язати своє життя з технологіями та програмуванням, чого успішно досягла. Плюсом до вмінь є те, що вмію в'язати, вишивати хрестиком та непогано малюю.</p>
+            <p>Студентка спеціальності «Кібербезпека» у Національному університеті «Львівська політехніка». Маю міцну базу в об'єктно-орієнтованому програмуванні та розумінні принципів побудови безпечних систем. Захоплююсь криптографією, аналізом мережевого трафіку та вивченням стандартів інформаційної безпеки. Відповідальна, швидко навчаюсь новому та активно розвиваюсь як фахівець у сфері ІТ.</p>
         </section>
 
-        <!-- Розділ "Досвід роботи" -->
-        <section>
+        <section class="section-card">
             <h2>Досвід роботи</h2>
-            <p>Досвід роботи сумний, не хочу згадувати. Наразі стараюсь непогано навчатись, щоб надалі працювати за професією.</p>
+            <h3 style="color: #4f46e5; margin-bottom: 5px;">Junior Information Security Specialist / Trainee</h3>
+            <p><strong>ТОВ «ІТ-Солюшн»</strong> | Травень 2026 – за сучасний час</p>
+            <p style="margin-top: 10px; font-weight: bold;">Обов'язки та досягнення:</p>
+            <ul style="margin-top: 10px; padding-left: 20px; line-height: 1.8;">
+                <li>Брала участь в аудиті інформаційної безпеки та розробці матриці ризиків відповідно до стандартів ISO/IEC 27001 та ISO/IEC 27005.</li>
+                <li>Займалася аналізом мережевого трафіку та моніторингом захищених з'єднань (зокрема інспекцією), сертифікатів TLS 1.3.</li>
+                <li>Розробила та підтримувала внутрішні скрипти на Python для автоматизації процесів безпеки (робота з криптографічними алгоритмами хешування, такими як blake2b).</li>
+                <li>Працювала з системами контролю версій (Git) у командному середовищі, дотримуючись стандартів написання чистого коду.</li>
+            </ul>
         </section>
 
-        <!-- Розділ "Освіта" -->
-        <section>
+        <section class="section-card">
             <h2>Освіта</h2>
-            <ul>
+            <ul class="education-list">
                 <li>
                     <h3>Національний університет "Львівська політехніка"</h3>
                     <p>Спеціальність: Кібербезпека (Бакалаврат)</p>
@@ -43,9 +63,8 @@
 
     </main>
 
-    <!-- Підвал сторінки -->
     <footer>
-        <p>© 2026 Женчак Марта. Резюме створено для лабораторної роботи.</p>
+        <p>© 2026 Женчак Марта. Усі права захищено.</p>
     </footer>
 
 </body>
